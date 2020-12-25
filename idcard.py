@@ -20,6 +20,7 @@ class Matcher(object):
         self.matched = False
 
     def match(self, line):
+        line = line.replace(' ','')
         m = self.regex.match(line)
         if m:
             self.matched = True
@@ -58,6 +59,6 @@ def match_idcard(lines):
 
 
 if __name__ == "__main__":
-    lines = ["姓名薛会萍", "性别女民族汗", "出生1990年11月13日", "住址北京市海淀区", "公民身份号码142701199001014567"]
+    lines = ["姓名宋岳庭", "性别女民族汉", "出生1990年11月13日", "住址北京市海淀区", "公民身份号码148601199001014567"]
     r = match_idcard(lines)
     print (r)
