@@ -22,6 +22,10 @@ def detect_outlier(char_probs, thresh=1.4):
 
 
 if __name__ == "__main__":
-    char_probs = [0.9, 0.3, 0.2, 0.4, 0.5, 0.2, -60]
+    char_probs = [0.9, 0.3, 0.2, 0.4, 0.5, 0.2, -10, -4000]
+    print(char_probs)
     r = detect_outlier(char_probs)
-    print(r)
+    print("离群值所在位置：{}".format(r))
+    print("离群值：")
+    for i in r:
+        print("{} ".format(char_probs[i]), end='')
